@@ -10,7 +10,7 @@ class NpmBuild < ::Middleman::Extension
   end
 
   def after_build(builder)
-    %x(npm run #{options.build_command})
+    %x(npm run #{options_hash.build_command})
   end
 end
 
