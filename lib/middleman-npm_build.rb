@@ -7,10 +7,11 @@ class NpmBuild < ::Middleman::Extension
 
   def initialize(app, options_hash={}, &block)
     super
-  end
 
-  def after_build(builder)
-    %x(npm run #{options_hash.build_command})
+    build_command = options.build_command
+    app.after_build do |builder|
+      system "npm run #{build_command}"
+    end
   end
 end
 
