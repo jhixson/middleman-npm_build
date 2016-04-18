@@ -9,7 +9,7 @@ class NpmBuild < ::Middleman::Extension
     super
 
     build_command = options.build_command
-    app.after_build do |builder|
+    app.before_build do |builder|
       system "npm run #{build_command}"
     end
   end
