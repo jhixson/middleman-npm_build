@@ -1,6 +1,6 @@
 # Middleman::NpmBuild
 
-Runs a generic `npm` build command after your Middleman site has finished building.
+Runs a generic `npm` build command before your Middleman site starts building.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Add this line to your `config.rb`:
 
 `activate :npm_build`
 
-This will run `npm run build` after your Middleman site has finished building.
+This will run `npm run build` before your Middleman site starts building.
 
 You can also pass a custom build function (defined in your `package.json` file) as below:
 
